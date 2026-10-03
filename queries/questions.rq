@@ -1,0 +1,124 @@
+# CQ1 What did a step call, with which arguments, and what came back or failed?
+# needs: ?tool ?arguments ?outcome
+SELECT ?run ?call ?tool ?arguments ?outcome WHERE {
+  ?run a provai:Run .
+  ?call a provai:ToolCall ; provai:partOf ?run ; provai:usedTool ?tool ; prov:used ?arguments .
+  FILTER NOT EXISTS { ?arguments a provai:Message }
+  FILTER NOT EXISTS { ?arguments a provai:Tool }
+  FILTER NOT EXISTS { ?arguments a provai:Model }
+  { ?outcome prov:wasGeneratedBy ?call } UNION { ?call provai:status "failed" BIND("failed" AS ?outcome) }
+}
+
+# CQ2 Which agent and step failed, how, and what did the failure reach?
+# needs: ?step ?agent ?error
+SELECT ?run ?step ?agent ?error ?reached WHERE {
+  ?run a provai:Run .
+  ?step provai:partOf ?run ; provai:status "failed" .
+  OPTIONAL { ?step provai:errorType ?error }
+  OPTIONAL { ?step prov:wasAssociatedWith ?agent }
+  OPTIONAL { ?out prov:wasGeneratedBy ?step . ?reached provai:dependsOn ?out }
+}
+
+# CQ3 Who passed which task to whom, and who is accountable for an output, back to the person who started the run?
+# needs: ?from ?to ?person
+SELECT ?run ?from ?to ?output ?person WHERE {
+  ?run a provai:Run .
+  { ?h a provai:Handoff ; provai:partOf ?run ; provai:fromAgent ?from ; provai:toAgent ?to }
+  UNION
+  { ?output a provai:Effect ; prov:wasGeneratedBy/provai:partOf ?run ; provai:accountableAgent ?person . ?person a prov:Person }
+}
+
+# CQ4 Who routed work, to whom, among which candidates, and why?
+# needs: ?router ?candidate ?selected
+SELECT ?run ?router ?candidate ?selected ?reason WHERE {
+  ?run a provai:Run .
+  ?r a provai:Routing ; provai:partOf ?run ; provai:selected ?selected .
+  OPTIONAL { ?r prov:wasAssociatedWith ?router }
+  OPTIONAL { ?r provai:candidate ?candidate }
+  OPTIONAL { ?r provai:reason ?reason }
+}
+
+# CQ5 Which memory records did a step read or write, who wrote them, and were they superseded?
+# needs: ?record ?writer ?reader
+SELECT ?run ?memory ?record ?writer ?reader ?newer WHERE {
+  ?run a provai:Run .
+  ?memory a provai:Memory ; prov:hadMember ?record .
+  ?record prov:wasGeneratedBy ?write . ?write provai:partOf ?run .
+  OPTIONAL { ?write prov:wasAssociatedWith ?writer }
+  OPTIONAL { ?read a provai:MemoryAccess ; prov:used ?record ; prov:wasAssociatedWith ?reader }
+  OPTIONAL { ?newer prov:wasRevisionOf ?record }
+}
+
+# CQ6 Which checks and approvals stood between an output and its effect, with which outcome, by whom?
+# needs: ?check ?outcome ?by
+SELECT ?run ?effect ?check ?outcome ?by WHERE {
+  ?run a provai:Run .
+  ?effect a provai:Effect ; prov:wasGeneratedBy ?send . ?send provai:partOf ?run .
+  ?check a provai:Check ; provai:partOf ?run ; provai:outcome ?outcome ; prov:wasAssociatedWith ?by .
+  { ?check provai:checked ?x . ?effect provai:dependsOn ?x } UNION { ?send provai:informedBy ?check }
+}
+
+# CQ7 What did an output rely on: which model calls and tool calls produced what it depends on?
+# needs: ?source ?producer
+SELECT ?run ?effect ?source ?producer ?kind ?tool WHERE {
+  ?run a provai:Run .
+  ?effect a provai:Effect ; prov:wasGeneratedBy/provai:partOf ?run ; provai:dependsOn ?source .
+  ?source prov:wasGeneratedBy ?producer . ?producer a ?kind .
+  FILTER(?kind IN (provai:ToolCall, provai:ModelCall))
+  OPTIONAL { ?producer provai:usedTool ?tool }
+}
+
+# CQ8 How many iterations did a loop run, which steps were retries, and what ended it?
+# needs: ?retry ?iteration ?outcome
+SELECT ?run ?retry ?failed ?attempt ?check ?iteration ?outcome WHERE {
+  ?run a provai:Run .
+  { ?retry provai:retryOf ?failed ; provai:partOf ?run . OPTIONAL { ?retry provai:attempt ?attempt } }
+  UNION
+  { ?check a provai:Check ; provai:partOf ?run ; provai:iteration ?iteration ; provai:outcome ?outcome }
+}
+
+# CQ9 Which agents ran in parallel?
+# needs: ?a ?b
+SELECT DISTINCT ?run ?a ?b WHERE {
+  ?run a provai:Run .
+  { SELECT ?run ?x ?a ?s1 ?e1 WHERE { ?x provai:partOf ?run ; a provai:AgentInvocation ; prov:wasAssociatedWith ?a ;
+      prov:startedAtTime ?s1 ; prov:endedAtTime ?e1 } }
+  { SELECT ?run ?y ?b ?s2 ?e2 WHERE { ?y provai:partOf ?run ; a provai:AgentInvocation ; prov:wasAssociatedWith ?b ;
+      prov:startedAtTime ?s2 ; prov:endedAtTime ?e2 } }
+  FILTER(STR(?a) < STR(?b) && ?s1 < ?e2 && ?s2 < ?e1)
+  FILTER NOT EXISTS { ?x provai:partOf ?y }
+  FILTER NOT EXISTS { ?y provai:partOf ?x }
+}
+
+# CQ10 In what order did the agents act, and which writes to shared memory conflicted?
+# needs: ?agent ?start
+SELECT ?run ?agent ?start ?conflict WHERE {
+  ?run a provai:Run .
+  ?step a provai:AgentInvocation ; provai:partOf ?run ; prov:wasAssociatedWith ?agent ; prov:startedAtTime ?start .
+  OPTIONAL { ?conflict a provai:MemoryRecord . ?r1 prov:wasRevisionOf ?conflict . ?r2 prov:wasRevisionOf ?conflict .
+             ?r1 prov:wasGeneratedBy/provai:partOf ?run . FILTER(?r1 != ?r2) }
+}
+ORDER BY ?run ?start
+
+# CQ11 How many tokens, how much cost, and how much time did each agent's model calls take?
+# needs: ?agent ?inputTokens ?costed ?first
+SELECT ?run ?agent (COUNT(?m) AS ?calls) (SUM(?in) AS ?inputTokens) (SUM(?out) AS ?outputTokens)
+       (COUNT(?c) AS ?costed) (SUM(?c) AS ?cost) (MIN(?s) AS ?first) (MAX(?e) AS ?last) WHERE {
+  ?run a provai:Run .
+  ?m a provai:ModelCall ; provai:partOf ?run ; prov:wasAssociatedWith ?agent ;
+     prov:startedAtTime ?s ; prov:endedAtTime ?e .
+  OPTIONAL { ?m provai:inputTokens ?in }
+  OPTIONAL { ?m provai:outputTokens ?out }
+  OPTIONAL { ?m provai:cost ?c }
+}
+GROUP BY ?run ?agent
+
+# CQ12 Was content captured, and which models, settings, and inputs can replay the run?
+# needs: ?model ?temperature ?input ?captured
+SELECT ?run ?source ?captured ?model ?temperature ?input WHERE {
+  ?run a provai:Run ; provai:source ?source ; provai:contentCaptured ?captured .
+  FILTER(?captured = true)
+  OPTIONAL { ?m provai:partOf ?run ; provai:usedModel ?model .
+             OPTIONAL { ?m provai:temperature ?temperature }
+             OPTIONAL { ?m prov:used ?input . ?input a provai:Message } }
+}

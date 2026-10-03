@@ -1,0 +1,79 @@
+@prefix provai: <https://w3id.org/prov-ai#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+provai:RunShape a sh:NodeShape ;
+    sh:targetClass provai:Run ;
+    sh:property [ sh:path provai:source ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "a run names the framework or format its record came from" ] ;
+    sh:property [ sh:path provai:contentCaptured ; sh:maxCount 1 ;
+        sh:message "a run says once whether content was captured" ] .
+
+provai:StepShape a sh:NodeShape ;
+    sh:targetClass provai:Step ;
+    sh:property [ sh:path provai:partOf ; sh:minCount 1 ;
+        sh:message "a step names the run or activity it ran inside" ] ;
+    sh:property [ sh:path provai:status ; sh:maxCount 1 ;
+        sh:in ( "completed" "failed" "blocked" "cancelled" "interrupted" ) ;
+        sh:message "a step ends in one known status" ] .
+
+provai:ModelCallShape a sh:NodeShape ;
+    sh:targetClass provai:ModelCall ;
+    sh:property [ sh:path provai:usedModel ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "a model call names the one model it used" ] .
+
+provai:ToolCallShape a sh:NodeShape ;
+    sh:targetClass provai:ToolCall ;
+    sh:property [ sh:path provai:usedTool ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "a tool call names the one tool it used" ] .
+
+provai:RoutingShape a sh:NodeShape ;
+    sh:targetClass provai:Routing ;
+    sh:property [ sh:path provai:selected ; sh:minCount 1 ;
+        sh:message "a routing names the agents it selected" ] .
+
+provai:HandoffShape a sh:NodeShape ;
+    sh:targetClass provai:Handoff ;
+    sh:property [ sh:path provai:fromAgent ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "a handoff names the agent that handed off" ] ;
+    sh:property [ sh:path provai:toAgent ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "a handoff names the agent that received the work" ] .
+
+provai:CheckShape a sh:NodeShape ;
+    sh:targetClass provai:Check ;
+    sh:property [ sh:path provai:checked ; sh:minCount 1 ;
+        sh:message "a check names what it evaluated" ] ;
+    sh:property [ sh:path provai:outcome ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:in ( "pass" "fail" "block" "approve" "edit" "reject" "cancel" ) ;
+        sh:message "a check records one known outcome" ] .
+
+provai:MemoryRecordShape a sh:NodeShape ;
+    sh:targetClass provai:MemoryRecord ;
+    sh:property [ sh:path [ sh:inversePath prov:hadMember ] ; sh:minCount 1 ; sh:maxCount 1 ;
+        sh:message "a memory record belongs to one memory" ] ;
+    sh:property [ sh:path [ sh:inversePath prov:wasRevisionOf ] ; sh:maxCount 1 ;
+        sh:message "a memory record is revised by at most one record; two revisions are a conflicting write" ] .
+
+provai:EffectShape a sh:NodeShape ;
+    sh:targetClass provai:Effect ;
+    sh:property [ sh:path provai:target ; sh:minCount 1 ;
+        sh:message "an effect names the resource it changed" ] ;
+    sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ;
+        sh:message "an effect names the step that produced it" ] .
+
+provai:FailureAttributionShape a sh:NodeShape ;
+    sh:targetClass provai:FailureAttribution ;
+    sh:property [ sh:path provai:blamedStep ; sh:minCount 1 ;
+        sh:message "a failure attribution names the step it blames" ] ;
+    sh:property [ sh:path prov:wasGeneratedBy ; sh:minCount 1 ;
+        sh:message "a failure attribution names the activity, of a method or a person, that reached it" ] .
+
+provai:AssertedFactsShape a sh:NodeShape ;
+    sh:targetClass prov:Entity ;
+    sh:property [ sh:path provai:dependsOn ; sh:maxCount 0 ;
+        sh:message "dependence is inferred by the reasoner, never asserted" ] ;
+    sh:property [ sh:path provai:derivedFrom ; sh:maxCount 0 ;
+        sh:message "the closure of derivation is inferred by the reasoner, never asserted" ] ;
+    sh:property [ sh:path provai:accountableAgent ; sh:maxCount 0 ;
+        sh:message "accountability is inferred by the reasoner, never asserted" ] .

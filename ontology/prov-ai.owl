@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Handoff">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:label xml:lang="en">handoff</rdfs:label>
+    <rdfs:comment xml:lang="en">A step that passed work from one agent to another.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#contentCaptured">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">content captured</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Run"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">Whether the content of messages was captured for a run.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#provider">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">provider</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Model"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The provider that served a model.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#knownBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">known by</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">How an edge is known when the source does not record it: declared or inferred.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b11">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#used"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Agent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+    <rdfs:label xml:lang="en">agent</rdfs:label>
+    <rdfs:comment xml:lang="en">An agent of a multi-agent system, named within its run or session.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Document">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">document</rdfs:label>
+    <rdfs:comment xml:lang="en">An item a retrieval returned.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#attempt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">attempt</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The attempt number of a retried step.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#checked">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+    <rdfs:label xml:lang="en">checked</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Check"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:comment xml:lang="en">The entity a check evaluated.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#status">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">status</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">How an activity ended: completed, failed, blocked, cancelled, or interrupted.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#derivedFrom">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">derived from</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:comment xml:lang="en">The closure of recorded derivation.</rdfs:comment>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/prov-ai#dependsOn"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b6">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#actedOnBehalfOf"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#accountableAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">accountable agent</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <owl:propertyChainAxiom rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b1"/>
+    <owl:propertyChainAxiom rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b3"/>
+    <owl:propertyChainAxiom rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b5"/>
+    <rdfs:comment xml:lang="en">An agent whose step produced the entity or something it may depend on, or an agent such an agent acted on behalf of.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Session">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:label xml:lang="en">session</rdfs:label>
+    <rdfs:comment xml:lang="en">A conversation or thread that spans several runs.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#spawnedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">spawned by</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:comment xml:lang="en">The step that created an agent during the run.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Run">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:label xml:lang="en">run</rdfs:label>
+    <rdfs:comment xml:lang="en">One execution of a multi-agent system for one request.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#PromptTemplate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">prompt template</rdfs:label>
+    <rdfs:comment xml:lang="en">The reusable wording a prompt was rendered from.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#inputTokens">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">input tokens</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The tokens a model call read.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b2">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b16">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#used"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#dependsOn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">depends on</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:comment xml:lang="en">An entity this entity may depend on: what it was derived from, what its step used, and what reached that step through messages, triggers, and enclosing activities.</rdfs:comment>
+    <owl:propertyChainAxiom rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b7"/>
+    <owl:propertyChainAxiom rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b9"/>
+    <owl:propertyChainAxiom rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b12"/>
+    <owl:propertyChainAxiom rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b14"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#partOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">part of</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:comment xml:lang="en">The run, session, loop, or parent step an activity ran inside.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#votedFor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/prov-ai#checked"/>
+    <rdfs:label xml:lang="en">voted for</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Vote"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:comment xml:lang="en">The candidate output a vote chose.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#seed">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">seed</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The seed a model call was sampled with.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Check">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:label xml:lang="en">check</rdfs:label>
+    <rdfs:comment xml:lang="en">A guardrail, an evaluator, a reviewer, or a human approval.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#MemoryRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">memory record</rdfs:label>
+    <rdfs:comment xml:lang="en">One record in a memory.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#MemoryAccess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:label xml:lang="en">memory access</rdfs:label>
+    <rdfs:comment xml:lang="en">A step that read, wrote, or deleted records of a memory.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#topP">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">top p</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:comment xml:lang="en">The nucleus sampling parameter of a model call.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#selected">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/prov-ai#candidate"/>
+    <rdfs:label xml:lang="en">selected</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Routing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdfs:comment xml:lang="en">An agent a routing chose.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#maxTokens">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">max tokens</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The output length limit of a model call.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#errorType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">error type</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The error an activity ended with.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#readOnly">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">read only</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Tool"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">The tool declares that it changes nothing outside the run.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Vote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Check"/>
+    <rdfs:label xml:lang="en">vote</rdfs:label>
+    <rdfs:comment xml:lang="en">A check in which an agent chooses one of several candidate outputs.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b3">
+    <rdf:first rdf:resource="https://w3id.org/prov-ai#dependsOn"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b4"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="en">PROV-AI</rdfs:label>
+    <dcterms:title xml:lang="en">PROV-AI: PROV for Multi-Agent AI Execution</dcterms:title>
+    <dcterms:description xml:lang="en">A vocabulary over W3C PROV-O for the execution provenance of multi-agent systems, into which the records of different agent frameworks and trace formats are integrated.</dcterms:description>
+    <dcterms:creator>Lucas Kojo Chehuen</dcterms:creator>
+    <dcterms:publisher>Federal University of Juiz de Fora</dcterms:publisher>
+    <dcterms:created>2026-10-02</dcterms:created>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <vann:preferredNamespacePrefix>provai</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/prov-ai#</vann:preferredNamespaceUri>
+    <owl:versionInfo>1.0</owl:versionInfo>
+    <owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#outputTokens">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">output tokens</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The tokens a model call generated.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Model">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">model</rdfs:label>
+    <rdfs:comment xml:lang="en">A model a call used, identified by its provider and name.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#AgentInvocation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:label xml:lang="en">agent invocation</rdfs:label>
+    <rdfs:comment xml:lang="en">A turn an agent took.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#usedModel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+    <rdfs:label xml:lang="en">used model</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="https://w3id.org/prov-ai#Model"/>
+    <rdfs:comment xml:lang="en">The model a call used.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#cost">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">cost</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:comment xml:lang="en">The price of a model call in US dollars.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#scope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">scope</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">Who may read a record: a user, a tenant, or an agent.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#temperature">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">temperature</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:comment xml:lang="en">The sampling temperature of a model call.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#validAt">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">valid at</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#MemoryRecord"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    <rdfs:comment xml:lang="en">The time the content of a record is about.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#fromAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+    <rdfs:label xml:lang="en">from agent</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Handoff"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdfs:comment xml:lang="en">The agent that handed the work off.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#trustLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">trust level</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">How far content can be trusted, as a source or a check states it, such as trusted or untrusted.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#target">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">target</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Effect"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The resource an effect changed.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/publisher">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b4">
+    <rdf:first rdf:resource="https://w3id.org/prov-ai#accountableAgent"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/description">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#ModelCall">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:label xml:lang="en">model call</rdfs:label>
+    <rdfs:comment xml:lang="en">One call to an AI model, such as a language model.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#ToolCall">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:label xml:lang="en">tool call</rdfs:label>
+    <rdfs:comment xml:lang="en">A call to a tool, a function, an API, or an MCP server.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#candidate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">candidate</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Routing"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdfs:comment xml:lang="en">An agent a routing could have chosen.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b5">
+    <rdf:first rdf:resource="https://w3id.org/prov-ai#accountableAgent"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b6"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#usedTool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+    <rdfs:label xml:lang="en">used tool</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ToolCall"/>
+    <rdfs:range rdf:resource="https://w3id.org/prov-ai#Tool"/>
+    <rdfs:comment xml:lang="en">The tool a call used.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#branch">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">branch</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The label of the parallel branch a step ran in.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#retryOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInformedBy"/>
+    <rdfs:label xml:lang="en">retry of</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:range rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:comment xml:lang="en">The failed step this step retries.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Tool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">tool</rdfs:label>
+    <rdfs:comment xml:lang="en">A tool a call used.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#blamedAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">blamed agent</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#FailureAttribution"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdfs:comment xml:lang="en">The agent an attribution names as responsible.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#version">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">version</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The version of a template, model, document, or tool.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Retrieval">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:label xml:lang="en">retrieval</rdfs:label>
+    <rdfs:comment xml:lang="en">A lookup in a document store or an index.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#irreversible">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">irreversible</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Effect"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">The effect cannot be undone.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Step">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:label xml:lang="en">step</rdfs:label>
+    <rdfs:comment xml:lang="en">A unit of work inside a run.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#toAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+    <rdfs:label xml:lang="en">to agent</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Handoff"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdfs:comment xml:lang="en">The agent that received the work.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#outcome">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">outcome</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Check"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The decision of a check: pass, fail, block, approve, edit, reject, or cancel.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#sequence">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">sequence</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The position of a step or message in the order its channel delivered them.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#finishReason">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">finish reason</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#ModelCall"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">Why the model stopped generating.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/created">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#source">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">source</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Run"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The framework or format that produced the record of a run, with its schema version.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b12">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b13"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#destructive">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">destructive</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Tool"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:comment xml:lang="en">The tool declares that it may delete or overwrite data.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/creator">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b8">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#used"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#informedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:label xml:lang="en">informed by</rdfs:label>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:comment xml:lang="en">The closure of communication between activities.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Message">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">message</rdfs:label>
+    <rdfs:comment xml:lang="en">Content passed between agents or to a model.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#reason">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">reason</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:comment xml:lang="en">The stated reason for a routing, a check outcome, or a refusal.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Routing">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:label xml:lang="en">routing</rdfs:label>
+    <rdfs:comment xml:lang="en">A step that chose which agent or branch runs next.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Effect">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">effect</rdfs:label>
+    <rdfs:comment xml:lang="en">A change a run made outside itself: a write, a message sent, or data disclosed.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#Memory">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Collection"/>
+    <rdfs:label xml:lang="en">memory</rdfs:label>
+    <rdfs:comment xml:lang="en">A store that outlives a run: long-term memory, a session store, or a board shared by agents.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b13">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#wasStartedBy"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/license">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b14">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b15"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#FailureAttribution">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:label xml:lang="en">failure attribution</rdfs:label>
+    <rdfs:comment xml:lang="en">A statement that a step or an agent caused a failure, generated by the method or the person that reached it.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b7">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#iteration">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:label xml:lang="en">iteration</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#Step"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:comment xml:lang="en">The index of a step within its loop.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/prov-ai#blamedStep">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="en">blamed step</rdfs:label>
+    <rdfs:domain rdf:resource="https://w3id.org/prov-ai#FailureAttribution"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:comment xml:lang="en">The step an attribution names as the cause.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b10">
+    <rdf:first rdf:resource="https://w3id.org/prov-ai#informedBy"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b11"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespaceUri">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b1">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b2"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b9">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b10"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b15">
+    <rdf:first rdf:resource="https://w3id.org/prov-ai#partOf"/>
+    <rdf:rest rdf:nodeID="n95baeb5ca90c4875807beee768a4ecf5b16"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/title">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AnnotationProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasInformedBy">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/prov-ai#informedBy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/prov-ai#derivedFrom"/>
+  </rdf:Description>
+</rdf:RDF>

@@ -1,0 +1,762 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix provai: <https://w3id.org/prov-ai#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-fb83-7ae2-a8ba-9428f3e6ff9c-effect-2026-10-02T10%3A43%3A11.365137%2B00%3A00> a provai:Effect ;
+    rdfs:label "effect" ;
+    prov:value "/root/PapersABC/PROV-AI/v10/data/runs/langgraph/lg-20261002T103740/brief-to-client.txt" ;
+    prov:wasAttributedTo <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb84-77b0-9285-92a3fa416c23> ;
+    provai:target "/root/PapersABC/PROV-AI/v10/data/runs/langgraph/lg-20261002T103740/brief-to-client.txt" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-fb84-77b0-9285-92a3fa416c23-result> a prov:Entity ;
+    rdfs:label "send_brief result" ;
+    prov:value "/root/PapersABC/PROV-AI/v10/data/runs/langgraph/lg-20261002T103740/brief-to-client.txt" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb84-77b0-9285-92a3fa416c23> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-sent-1> a prov:Entity ;
+    rdfs:label "sent v1" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb83-7ae2-a8ba-9428f3e6ff9c> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/memory/notes> a provai:Memory ;
+    rdfs:label "notes" ;
+    prov:hadMember <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/notes%2FLisbon%2F1> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0dd-78b0-b6d3-35d873dc7453> a provai:Handoff ;
+    rdfs:label "handoff" ;
+    prov:endedAtTime "2026-10-02T10:42:03.102342+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:03.101891+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> ;
+    provai:fromAgent <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/coordinator> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:sequence 3 ;
+    provai:status "completed" ;
+    provai:toAgent <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0de-7851-b407-c3cd3ccae24c-memory_read-2026-10-02T10%3A42%3A03.103044%2B00%3A00> a provai:MemoryAccess ;
+    rdfs:label "memory read" ;
+    prov:endedAtTime "2026-10-02T10:42:03.103044+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:03.103044+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/notes%2FLisbon%2F1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0de-7851-b407-c3cd3ccae24c> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c27f-74c1-85a0-9e1caf67a69a-check-2026-10-02T10%3A42%3A56.768332%2B00%3A00> a provai:Check ;
+    rdfs:label "check" ;
+    prov:endedAtTime "2026-10-02T10:42:56.768332+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:56.768332+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/evaluator> ;
+    provai:checked <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-1> ;
+    provai:iteration 1 ;
+    provai:outcome "fail" ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c27f-74c1-85a0-9e1caf67a69a> ;
+    provai:reason "the first draft is always sent back for revision" ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c281-7f53-b621-7e6ff638d26e-memory_read-2026-10-02T10%3A42%3A56.769804%2B00%3A00> a provai:MemoryAccess ;
+    rdfs:label "memory read" ;
+    prov:endedAtTime "2026-10-02T10:42:56.769804+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:56.769804+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/notes%2FLisbon%2F1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c281-7f53-b621-7e6ff638d26e> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-d65c-7a82-a301-f343fa846c94-check-2026-10-02T10%3A43%3A11.359255%2B00%3A00> a provai:Check ;
+    rdfs:label "check" ;
+    prov:endedAtTime "2026-10-02T10:43:11.359255+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:11.359255+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/evaluator> ;
+    provai:checked <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2> ;
+    provai:iteration 2 ;
+    provai:outcome "pass" ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-d65c-7a82-a301-f343fa846c94> ;
+    provai:reason "PASS" ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb80-7e80-a92b-2a732c320e96> a provai:Step ;
+    rdfs:label "approval" ;
+    prov:endedAtTime "2026-10-02T10:43:11.360460+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:11.360240+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:sequence 8 ;
+    provai:status "interrupted" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb82-7060-a72d-a28b654201e4-approval-2026-10-02T10%3A43%3A11.363042%2B00%3A00> a provai:Check ;
+    rdfs:label "approval" ;
+    prov:endedAtTime "2026-10-02T10:43:11.363042+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:11.363042+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/approver> ;
+    provai:checked <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2> ;
+    provai:outcome "approve" ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb82-7060-a72d-a28b654201e4> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/approver> a prov:Person ;
+    rdfs:label "approver" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/translator_agent> a provai:Agent ;
+    rdfs:label "translator_agent" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc30-f00e-76a0-b8e7-4304eb795487-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"content\": \"Agents: weather, facts, translator. Which agents are needed for a short brief on Lisbon's weather and facts? Answer with a JSON list of agent names.\", \"type\": \"text\"}], \"name\": null}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc31-801a-7100-ab04-de5a60cd2459-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"system\", \"parts\": [{\"content\": \"You do not know facts about cities. Always call search_facts first, then answer in one sentence.\", \"type\": \"text\"}], \"name\": null}, {\"role\": \"user\", \"parts\": [{\"content\": \"Facts about Lisbon?\", \"type\": \"text\"}], \"name\": null}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc31-801a-7100-ab04-de5a60cd2459-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"arguments\": {\"city\": \"Lisbon\"}, \"name\": \"search_facts\", \"id\": \"call-1ebb4066-997c-4582-8ca6-ad7b42278c18\", \"type\": \"tool_call\"}], \"finish_reason\": \"tool_calls\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-801a-7100-ab04-de5a60cd2459> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc31-801d-7893-ba19-96a6a0d7bb2b-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"system\", \"parts\": [{\"content\": \"You do not know the weather. Always call get_weather first, even if an earlier attempt failed, then answer in one sentence.\", \"type\": \"text\"}], \"name\": null}, {\"role\": \"user\", \"parts\": [{\"content\": \"Weather in Lisbon?\", \"type\": \"text\"}], \"name\": null}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc31-801d-7893-ba19-96a6a0d7bb2b-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"arguments\": {\"city\": \"Lisbon\"}, \"name\": \"get_weather\", \"id\": \"call-e1092f67-575b-42a9-a622-d38f053d0752\", \"type\": \"tool_call\"}], \"finish_reason\": \"tool_calls\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-801d-7893-ba19-96a6a0d7bb2b> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616d-7fe1-8dd5-761961827a8e-arguments> a prov:Entity ;
+    rdfs:label "search_facts arguments" ;
+    prov:value "{\"city\":\"Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616d-7fe1-8dd5-761961827a8e-result> a prov:Entity ;
+    rdfs:label "search_facts result" ;
+    prov:value "Lisbon is the capital of Portugal and lies on the Tagus estuary." ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc32-616d-7fe1-8dd5-761961827a8e> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616f-7131-b688-30578a761ff0-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"system\", \"parts\": [{\"content\": \"You do not know facts about cities. Always call search_facts first, then answer in one sentence.\", \"type\": \"text\"}], \"name\": null}, {\"role\": \"user\", \"parts\": [{\"content\": \"Facts about Lisbon?\", \"type\": \"text\"}], \"name\": null}, {\"role\": \"assistant\", \"parts\": [{\"arguments\": {\"city\": \"Lisbon\"}, \"name\": \"search_facts\", \"id\": \"call-1ebb4066-997c-4582-8ca6-ad7b42278c18\", \"type\": \"tool_call\"}], \"name\": \"facts_agent\"}, {\"role\": \"tool\", \"parts\": [{\"response\": \"Lisbon is the capital of Portugal and lies on the Tagus estuary.\", \"id\": \"call-1ebb4066-997c-4582-8ca6-ad7b42278c18\", \"type\": \"tool_call_response\"}], \"name\": \"search_facts\"}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc33-66e3-7a12-bd56-32f20ecd6c49-arguments> a prov:Entity ;
+    rdfs:label "get_weather arguments" ;
+    prov:value "{\"city\":\"Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc33-6bec-7b32-9b98-0853d7df751b-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"system\", \"parts\": [{\"content\": \"You do not know the weather. Always call get_weather first, even if an earlier attempt failed, then answer in one sentence.\", \"type\": \"text\"}], \"name\": null}, {\"role\": \"user\", \"parts\": [{\"content\": \"Weather in Lisbon?\", \"type\": \"text\"}], \"name\": null}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc33-6bec-7b32-9b98-0853d7df751b-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"arguments\": {\"city\": \"Lisbon\"}, \"name\": \"get_weather\", \"id\": \"call-05a465bb-f30c-4797-b1ce-a9f6400563ad\", \"type\": \"tool_call\"}], \"finish_reason\": \"tool_calls\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6bec-7b32-9b98-0853d7df751b> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b2-7e72-aa96-384b9ab22fad-arguments> a prov:Entity ;
+    rdfs:label "get_weather arguments" ;
+    prov:value "{\"city\":\"Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b2-7e72-aa96-384b9ab22fad-result> a prov:Entity ;
+    rdfs:label "get_weather result" ;
+    prov:value "Lisbon: 21 C, clear sky" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-e8b2-7e72-aa96-384b9ab22fad> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b4-7a40-85de-5ae91af53ae7-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"system\", \"parts\": [{\"content\": \"You do not know the weather. Always call get_weather first, even if an earlier attempt failed, then answer in one sentence.\", \"type\": \"text\"}], \"name\": null}, {\"role\": \"user\", \"parts\": [{\"content\": \"Weather in Lisbon?\", \"type\": \"text\"}], \"name\": null}, {\"role\": \"assistant\", \"parts\": [{\"arguments\": {\"city\": \"Lisbon\"}, \"name\": \"get_weather\", \"id\": \"call-05a465bb-f30c-4797-b1ce-a9f6400563ad\", \"type\": \"tool_call\"}], \"name\": \"weather_agent\"}, {\"role\": \"tool\", \"parts\": [{\"response\": \"Lisbon: 21 C, clear sky\", \"id\": \"call-05a465bb-f30c-4797-b1ce-a9f6400563ad\", \"type\": \"tool_call_response\"}], \"name\": \"get_weather\"}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-f0df-76d2-975b-50e054ba7ddb-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"content\": \"Write a two-sentence brief on Lisbon. Weather: Lisbon is currently 21\\u202f\\u00b0C with clear skies.. Facts: Lisbon is the capital of Portugal and lies on the Tagus estuary.. Note: Lisbon is the capital of Portugal and lies on the Tagus estuary.. Reply with the brief only.\", \"type\": \"text\"}], \"name\": null}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-c282-7cf3-a93b-b16080a1f799-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"content\": \"Write a two-sentence brief on Lisbon. Weather: Lisbon is currently 21\\u202f\\u00b0C with clear skies.. Facts: Lisbon is the capital of Portugal and lies on the Tagus estuary.. Note: Lisbon is the capital of Portugal and lies on the Tagus estuary.. The last draft failed review: the first draft is always sent back for revision. Fix it. Reply with the brief only.\", \"type\": \"text\"}], \"name\": null}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"content\": \"Does this brief mention the weather? Answer PASS or FAIL.\\nLisbon is currently 21\\u202f\\u00b0C with clear skies. Lisbon is the capital of Portugal and lies on the Tagus estuary.\", \"type\": \"text\"}], \"name\": null}]" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-fb84-77b0-9285-92a3fa416c23-arguments> a prov:Entity ;
+    rdfs:label "send_brief arguments" ;
+    prov:value "{\"text\":\"Lisbon is currently 21\\u202f\\u00b0C with clear skies. Lisbon is the capital of Portugal and lies on the Tagus estuary.\",\"to\":\"client\"}" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/notes%2FLisbon%2F1/derivation/01a0fc32-616f-7131-b688-30578a761ff0-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616f-7131-b688-30578a761ff0-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-approved-1> a prov:Entity ;
+    rdfs:label "approved v1" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb82-7060-a72d-a28b654201e4> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-1/derivation/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2/derivation/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1/derivation/01a0fc32-616f-7131-b688-30578a761ff0-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616f-7131-b688-30578a761ff0-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-1/derivation/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-2/derivation/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1/derivation/01a0fc30-f00e-76a0-b8e7-4304eb795487-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc30-f00e-76a0-b8e7-4304eb795487-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-2/derivation/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1/derivation/01a0fc34-e8b4-7a40-85de-5ae91af53ae7-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b4-7a40-85de-5ae91af53ae7-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/session/lg-20261002T103740> a provai:Session ;
+    rdfs:label "lg-20261002T103740" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f00e-76a0-b8e7-4304eb795487> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:38:17.583472+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:37:40.750664+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc30-f00e-76a0-b8e7-4304eb795487-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/coordinator> ;
+    provai:cost 0.0 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 49 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 271 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f00d-7880-9da4-e9fcbb0caea0> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8015-76d2-92a8-15da92b12a5e-memory_write-2026-10-02T10%3A39%3A17.268617%2B00%3A00> a provai:MemoryAccess ;
+    rdfs:label "memory write" ;
+    prov:endedAtTime "2026-10-02T10:39:17.268617+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:39:17.268617+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent> ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8015-76d2-92a8-15da92b12a5e> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-801a-7100-ab04-de5a60cd2459> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:39:15.305457+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:38:17.626813+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc31-801a-7100-ab04-de5a60cd2459-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent> ;
+    provai:cost 0.0 ;
+    provai:finishReason "tool_calls" ;
+    provai:inputTokens 297 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 43 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8016-7ac3-87be-2ec81847cdd8> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-801d-7893-ba19-96a6a0d7bb2b> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:40:22.241436+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:38:17.629611+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc31-801d-7893-ba19-96a6a0d7bb2b-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:cost 0.0 ;
+    provai:finishReason "tool_calls" ;
+    provai:inputTokens 298 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 43 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8014-7bf2-a788-a6fb0b683d70> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc32-616d-7fe1-8dd5-761961827a8e> a provai:ToolCall ;
+    rdfs:label "search_facts" ;
+    prov:endedAtTime "2026-10-02T10:39:15.309990+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:39:15.309053+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc31-801a-7100-ab04-de5a60cd2459-output>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616d-7fe1-8dd5-761961827a8e-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent> ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8016-7ac3-87be-2ec81847cdd8> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/tool/search_facts> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc32-616f-7131-b688-30578a761ff0> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:39:17.265613+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:39:15.311904+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616d-7fe1-8dd5-761961827a8e-result>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616f-7131-b688-30578a761ff0-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent> ;
+    provai:cost 0.0 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 358 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 94 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8016-7ac3-87be-2ec81847cdd8> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-66e3-7a12-bd56-32f20ecd6c49> a provai:ToolCall ;
+    rdfs:label "get_weather" ;
+    prov:endedAtTime "2026-10-02T10:40:22.244518+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:40:22.243977+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc31-801d-7893-ba19-96a6a0d7bb2b-output>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc33-66e3-7a12-bd56-32f20ecd6c49-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:errorType "TimeoutError" ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8014-7bf2-a788-a6fb0b683d70> ;
+    provai:status "failed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/tool/get_weather> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6bec-7b32-9b98-0853d7df751b> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:42:01.007511+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:40:23.532694+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc33-6bec-7b32-9b98-0853d7df751b-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:cost 0.0 ;
+    provai:finishReason "tool_calls" ;
+    provai:inputTokens 298 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 42 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6bea-7301-a336-596095290e83> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-e8b2-7e72-aa96-384b9ab22fad> a provai:ToolCall ;
+    rdfs:label "get_weather" ;
+    prov:endedAtTime "2026-10-02T10:42:01.010832+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:01.010163+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc33-6bec-7b32-9b98-0853d7df751b-output>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b2-7e72-aa96-384b9ab22fad-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:attempt 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6bea-7301-a336-596095290e83> ;
+    provai:retryOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-66e3-7a12-bd56-32f20ecd6c49> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/tool/get_weather> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-e8b4-7a40-85de-5ae91af53ae7> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:42:03.097000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:01.012346+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b2-7e72-aa96-384b9ab22fad-result>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b4-7a40-85de-5ae91af53ae7-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:cost 0.0 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 353 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 60 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6bea-7301-a336-596095290e83> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0df-76d2-975b-50e054ba7ddb> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:42:56.766417+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:03.103294+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-f0df-76d2-975b-50e054ba7ddb-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    provai:cost 0.0 ;
+    provai:finishReason "length" ;
+    provai:inputTokens 81 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 1000 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0de-7851-b407-c3cd3ccae24c> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c282-7cf3-a93b-b16080a1f799> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:43:01.847162+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:56.770043+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-c282-7cf3-a93b-b16080a1f799-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    provai:cost 0.0 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 100 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 619 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c281-7f53-b621-7e6ff638d26e> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde> a provai:ModelCall ;
+    rdfs:label "chat nvidia/nemotron-3.5-lightning:free" ;
+    prov:endedAtTime "2026-10-02T10:43:11.358570+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:01.854201+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/evaluator> ;
+    provai:cost 0.0 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 59 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 385 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-d65c-7a82-a301-f343fa846c94> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/tool/search_facts> a provai:Tool ;
+    rdfs:label "search_facts" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/tool/send_brief> a provai:Tool ;
+    rdfs:label "send_brief" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc30-f00e-76a0-b8e7-4304eb795487-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"content\": \"[\\\"weather\\\", \\\"facts\\\"]\", \"type\": \"text\"}], \"finish_reason\": \"stop\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f00e-76a0-b8e7-4304eb795487> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b4-7a40-85de-5ae91af53ae7-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"content\": \"Lisbon is currently 21\\u202f\\u00b0C with clear skies.\", \"type\": \"text\"}], \"finish_reason\": \"stop\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-e8b4-7a40-85de-5ae91af53ae7> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"content\": \"PASS\", \"type\": \"text\"}], \"finish_reason\": \"stop\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-1> a prov:Entity ;
+    rdfs:label "iteration v1" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-1/derivation/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0de-7851-b407-c3cd3ccae24c> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-1> a prov:Entity ;
+    rdfs:label "verdict v1" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c27f-74c1-85a0-9e1caf67a69a> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/run> a provai:Run ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/user> ;
+    provai:contentCaptured true ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/session/lg-20261002T103740> ;
+    provai:source "langgraph 1.2.12 with opentelemetry-instrumentation-genai-langchain 1.2b0" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f00d-7880-9da4-e9fcbb0caea0> a provai:Routing ;
+    rdfs:label "coordinator" ;
+    prov:endedAtTime "2026-10-02T10:38:17.619006+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:37:40.749873+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/coordinator> ;
+    provai:candidate <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/translator_agent>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:reason "[\"weather\", \"facts\"]" ;
+    provai:selected <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:sequence 1 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8014-7bf2-a788-a6eb5c8d7800> a provai:Step ;
+    rdfs:label "weather" ;
+    prov:endedAtTime "2026-10-02T10:40:22.245752+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:38:17.620622+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1> ;
+    provai:errorType "TimeoutError" ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:sequence 2 ;
+    provai:status "failed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8014-7bf2-a788-a6fb0b683d70> a provai:AgentInvocation ;
+    rdfs:label "weather_agent" ;
+    prov:endedAtTime "2026-10-02T10:40:22.245372+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:38:17.620866+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:errorType "TimeoutError" ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8014-7bf2-a788-a6eb5c8d7800> ;
+    provai:status "failed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6be9-7721-8fa9-41eb0808e3f7> a provai:Step ;
+    rdfs:label "weather" ;
+    prov:endedAtTime "2026-10-02T10:42:03.100033+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:40:23.529788+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1> ;
+    provai:attempt 2 ;
+    provai:iteration 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:retryOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8014-7bf2-a788-a6eb5c8d7800> ;
+    provai:sequence 2 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c27f-74c1-85a0-9e1caf67a69a> a provai:Step ;
+    rdfs:label "evaluator" ;
+    prov:endedAtTime "2026-10-02T10:42:56.768951+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:56.767987+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/evaluator> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:sequence 5 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb81-71a2-9949-e9ae5303fee5> a provai:Step ;
+    rdfs:label "graph invocation" ;
+    prov:endedAtTime "2026-10-02T10:43:11.365648+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:11.361786+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/run> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb82-7060-a72d-a28b654201e4> a provai:Step ;
+    rdfs:label "approval" ;
+    prov:endedAtTime "2026-10-02T10:43:11.363122+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:11.362890+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> ;
+    provai:iteration 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb81-71a2-9949-e9ae5303fee5> ;
+    provai:sequence 8 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb83-7ae2-a8ba-9428f3e6ff9c> a provai:Step ;
+    rdfs:label "send" ;
+    prov:endedAtTime "2026-10-02T10:43:11.365199+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:11.363741+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-approved-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb81-71a2-9949-e9ae5303fee5> ;
+    provai:sequence 9 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb84-77b0-9285-92a3fa416c23> a provai:ToolCall ;
+    rdfs:label "send_brief" ;
+    prov:endedAtTime "2026-10-02T10:43:11.364882+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:11.364022+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-fb84-77b0-9285-92a3fa416c23-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-fb83-7ae2-a8ba-9428f3e6ff9c> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/tool/send_brief> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/tool/get_weather> a provai:Tool ;
+    rdfs:label "get_weather" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/user> a prov:Person ;
+    rdfs:label "user" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/notes%2FLisbon%2F1> a provai:MemoryRecord ;
+    rdfs:label "Lisbon" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/notes%2FLisbon%2F1/derivation/01a0fc32-616f-7131-b688-30578a761ff0-output> ;
+    prov:value "Lisbon is the capital of Portugal and lies on the Tagus estuary." ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616f-7131-b688-30578a761ff0-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8015-76d2-92a8-15da92b12a5e-memory_write-2026-10-02T10%3A39%3A17.268617%2B00%3A00> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-1> a prov:Entity ;
+    rdfs:label "draft v1" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-1/derivation/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0de-7851-b407-c3cd3ccae24c> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-2> a prov:Entity ;
+    rdfs:label "verdict v2" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-2/derivation/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde-output> ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-d65e-78d0-b9be-e4d6e60f6bde-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-d65c-7a82-a301-f343fa846c94> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8015-76d2-92a8-15da92b12a5e> a provai:Step ;
+    rdfs:label "facts" ;
+    prov:endedAtTime "2026-10-02T10:39:17.268692+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:38:17.621798+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:sequence 2 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8016-7ac3-87be-2ec81847cdd8> a provai:AgentInvocation ;
+    rdfs:label "facts_agent" ;
+    prov:endedAtTime "2026-10-02T10:39:17.267129+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:38:17.622019+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8015-76d2-92a8-15da92b12a5e> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6bea-7301-a336-596095290e83> a provai:AgentInvocation ;
+    rdfs:label "weather_agent" ;
+    prov:endedAtTime "2026-10-02T10:42:03.099512+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:40:23.530234+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> ;
+    provai:iteration 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6be9-7721-8fa9-41eb0808e3f7> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-d65c-7a82-a301-f343fa846c94> a provai:Step ;
+    rdfs:label "evaluator" ;
+    prov:endedAtTime "2026-10-02T10:43:11.359590+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:43:01.852229+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-2>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/evaluator> ;
+    provai:iteration 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:sequence 7 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616f-7131-b688-30578a761ff0-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"content\": \"Lisbon is the capital of Portugal and lies on the Tagus estuary.\", \"type\": \"text\"}], \"finish_reason\": \"stop\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc32-616f-7131-b688-30578a761ff0> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-f0df-76d2-975b-50e054ba7ddb-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"content\": \"Lisbon enjoys a pleasant 21\\u202f\\u00b0C with clear skies today\", \"type\": \"text\"}], \"finish_reason\": \"length\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0df-76d2-975b-50e054ba7ddb> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"content\": \"Lisbon is currently 21\\u202f\\u00b0C with clear skies. Lisbon is the capital of Portugal and lies on the Tagus estuary.\", \"type\": \"text\"}], \"finish_reason\": \"stop\", \"name\": null}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c282-7cf3-a93b-b16080a1f799> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-2> a prov:Entity ;
+    rdfs:label "iteration v2" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-2/derivation/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c281-7f53-b621-7e6ff638d26e> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc34-f0de-7851-b407-c3cd3ccae24c> a provai:Step ;
+    rdfs:label "writer" ;
+    prov:endedAtTime "2026-10-02T10:42:56.767043+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:03.102801+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:sequence 4 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c281-7f53-b621-7e6ff638d26e> a provai:Step ;
+    rdfs:label "writer" ;
+    prov:endedAtTime "2026-10-02T10:43:01.848909+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:42:56.769454+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-iteration-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-verdict-1>,
+        <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> ;
+    provai:iteration 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> ;
+    provai:sequence 6 ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/evaluator> a provai:Agent ;
+    rdfs:label "evaluator" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/coordinator> a provai:Agent ;
+    rdfs:label "coordinator" ;
+    prov:actedOnBehalfOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/user> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2> a prov:Entity ;
+    rdfs:label "draft v2" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-draft-2/derivation/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc35-c282-7cf3-a93b-b16080a1f799-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc35-c281-7f53-b621-7e6ff638d26e> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/facts_agent> a provai:Agent ;
+    rdfs:label "facts_agent" ;
+    prov:actedOnBehalfOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/coordinator> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1> a prov:Entity ;
+    rdfs:label "facts v1" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-facts-1/derivation/01a0fc32-616f-7131-b688-30578a761ff0-output> ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc32-616f-7131-b688-30578a761ff0-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc31-8015-76d2-92a8-15da92b12a5e> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1> a prov:Entity ;
+    rdfs:label "weather v1" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-weather-1/derivation/01a0fc34-e8b4-7a40-85de-5ae91af53ae7-output> ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc34-e8b4-7a40-85de-5ae91af53ae7-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc33-6be9-7721-8fa9-41eb0808e3f7> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/weather_agent> a provai:Agent ;
+    rdfs:label "weather_agent" ;
+    prov:actedOnBehalfOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/coordinator> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/model/openai%2Fnvidia%2Fnemotron-3.5-lightning%3Afree> a provai:Model ;
+    rdfs:label "nvidia/nemotron-3.5-lightning:free" ;
+    provai:provider "openai" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/writer> a provai:Agent ;
+    rdfs:label "writer" ;
+    prov:actedOnBehalfOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/coordinator> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f007-7310-bf9c-3df6cbf9d514> a provai:Step ;
+    rdfs:label "graph invocation" ;
+    prov:endedAtTime "2026-10-02T10:43:11.361421+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T10:37:40.743876+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/run> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1> a prov:Entity ;
+    rdfs:label "selected v1" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-selected-1/derivation/01a0fc30-f00e-76a0-b8e7-4304eb795487-output> ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/01a0fc30-f00e-76a0-b8e7-4304eb795487-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/step/01a0fc30-f00d-7880-9da4-e9fcbb0caea0> .
+
+<https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/entity/state-city-1> a prov:Entity ;
+    rdfs:label "city v1" ;
+    prov:wasAttributedTo <https://w3id.org/prov-ai/run/langgraph/lg-20261002T103740/agent/user> .
+

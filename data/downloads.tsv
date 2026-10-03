@@ -1,0 +1,22 @@
+rank	framework	monthly_downloads	status
+1	LangGraph (Python and JS)	PyPI langgraph 43,651,931; npm @langchain/langgraph 14,091,296; total 57.7 M	Active. langgraph-supervisor-py repo archived; supervisor and swarm patterns replaced by subagents
+2	Claude Agent SDK (Python and TS)	PyPI claude-agent-sdk 28,944,305; npm @anthropic-ai/claude-agent-sdk 48,498,492; total 77.4 M	Active. Ranked below LangGraph because it is a single-agent harness with subagents and is pulled in by other tools
+3	Strands Agents (Python and TS)	PyPI strands-agents 36,490,610; npm @strands-agents/sdk 2,032,234; total 38.5 M	Active in the harness-sdk monorepo since June 2026; sdk-typescript and docs repos archived
+4	Pydantic AI	PyPI pydantic-ai-slim 23,147,907 (pydantic-ai 5,304,672 depends on it)	Active; v2.0.0 on 2026-06-23
+5	OpenAI Agents SDK (Python and JS)	PyPI openai-agents 12,074,423; npm @openai/agents 7,482,741; total 19.6 M	Active
+6	Google ADK (Python, Go, Java, JS)	PyPI google-adk 9,898,178; npm @google/adk 937,945; total 10.8 M	Active; ADK 2.0 marks Sequential, Parallel, Loop agents superseded by graph workflows
+7	Mastra (TS)	npm @mastra/core 7,054,478	Active; `.network()` deprecated in favor of supervisor agents
+8	LlamaIndex workflows and agents	PyPI llama-index-core 6,635,853 (llama-index-workflows 4,856,939); npm llamaindex 506,936 (deprecated JS package)	Python active; JS repo LlamaIndexTS archived ("deprecated and no longer maintained")
+9	Deep Agents (LangChain)	PyPI deepagents 5,168,001; npm deepagents 1,345,804; total 6.5 M	Active; deepagents-cli deprecated in favor of Managed Deep Agents
+10	DSPy	PyPI dspy 5,174,682	Active; a program optimizer with agent modules (ReAct), weakly multi-agent
+11	CrewAI	PyPI crewai 2,431,720	Active
+12	Agno	PyPI agno 1,711,213	Active
+13	Microsoft Agent Framework (Python, .NET)	PyPI agent-framework-core 921,084 (agent-framework 166,265); NuGet not read	Active; successor of Semantic Kernel and AutoGen
+14	Haystack	PyPI haystack-ai 539,609	Active
+15	smolagents	PyPI smolagents 427,830	Low activity; docs call it "an experimental API"
+16	AutoGen	PyPI autogen-core 408,209; autogen-agentchat 381,074	Maintenance mode; README points to MAF
+17	AgentScope	PyPI agentscope 296,670	Active; 2.x is a rewrite of 1.x
+18	Semantic Kernel	PyPI semantic-kernel 287,716; NuGet not read	Successor is MAF; README: "Semantic Kernel is now Microsoft Agent Framework!"
+19	AG2	PyPI ag2 183,350 (pyautogen 212,157)	Active; 1.0.0 (2026-07-27) replaced the classic ConversableAgent/GroupChat API
+20	Letta	PyPI letta 11,666; letta-client 133,763	V1 server retired to the `archive` branch; source moved to letta-ai/letta-code (TypeScript)
+21	CAMEL	PyPI camel-ai 42,790	Moderate activity

@@ -1,0 +1,910 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix provai: <https://w3id.org/prov-ai#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6f47ca9f24dc2b4b-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"OK. I've sent the brief to the client.\"}], \"finish_reason\": \"stop\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x6f47ca9f24dc2b4b> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc7b0096d6d4ac972-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"PASS\"}], \"finish_reason\": \"stop\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xc7b0096d6d4ac972> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/effect-2026-10-02T15%3A56%3A49.874Z> a provai:Effect ;
+    rdfs:label "effect" ;
+    prov:value "/root/PapersABC/PROV-AI/v10/data/runs/vercel_ai/va-20261002T155631/brief-to-client.txt" ;
+    prov:wasAttributedTo <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xc79cfb070f3c901d> ;
+    provai:target "/root/PapersABC/PROV-AI/v10/data/runs/vercel_ai/va-20261002T155631/brief-to-client.txt" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/memory/notes> a provai:Memory ;
+    rdfs:label "notes" ;
+    prov:hadMember <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/check-2026-10-02T15%3A56%3A43.273Z> a provai:Check ;
+    rdfs:label "check" ;
+    prov:endedAtTime "2026-10-02T15:56:43.273000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:43.273000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/evaluator> ;
+    provai:checked <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-output> ;
+    provai:iteration 1 ;
+    provai:outcome "fail" ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:reason "the first draft is always sent back for revision" ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/check-2026-10-02T15%3A56%3A48.565Z> a provai:Check ;
+    rdfs:label "check" ;
+    prov:endedAtTime "2026-10-02T15:56:48.565000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:48.565000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/evaluator> ;
+    provai:checked <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-output> ;
+    provai:iteration 2 ;
+    provai:outcome "pass" ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:reason "PASS" ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/handoff-2026-10-02T15%3A56%3A41.158Z> a provai:Handoff ;
+    rdfs:label "handoff" ;
+    prov:endedAtTime "2026-10-02T15:56:41.158000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:41.158000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> ;
+    provai:fromAgent <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:status "completed" ;
+    provai:toAgent <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/read-2026-10-02T15%3A56%3A41.976Z> a provai:MemoryAccess ;
+    rdfs:label "memory read" ;
+    prov:endedAtTime "2026-10-02T15:56:41.976000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:41.976000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xb7f7fe0e4341d56c> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/read-2026-10-02T15%3A56%3A44.173Z> a provai:MemoryAccess ;
+    rdfs:label "memory read" ;
+    prov:endedAtTime "2026-10-02T15:56:44.173000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:44.173000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xc9a3d1a0b3f10421> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/approver> a prov:Person ;
+    rdfs:label "approver" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/translator_agent> a provai:Agent ;
+    rdfs:label "translator_agent" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x099d62433a7dcc64-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x099d62433a7dcc64-input/derivation/0xf4c250a09e604acd-output> ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Send this brief to client:\\nLisbon is the capital of Portugal, beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\"}]}]" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-output> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x099d62433a7dcc64-input/derivation/0xf4c250a09e604acd-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x099d62433a7dcc64-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-b570b15b2dca022f\", \"name\": \"send_brief\", \"arguments\": {\"text\": \"Lisbon is the capital of Portugal, beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\", \"to\": \"client\"}}], \"finish_reason\": \"tool_call\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x099d62433a7dcc64> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x243444d6b204c9e3-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"current weather in Lisbon\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-bc65bc2b5dcb0791\", \"name\": \"get_weather\", \"arguments\": {\"city\": \"Lisbon\"}}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-bc65bc2b5dcb0791\", \"response\": \"TimeoutError: weather service timed out\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-96bd8e6e474b5f68\", \"name\": \"get_weather\", \"arguments\": {\"city\": \"Lisbon\"}}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-96bd8e6e474b5f68\", \"response\": \"Lisbon: 21 C, clear sky\"}]}]" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x3f703da56458ebda-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"interesting facts about Lisbon\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-abd0ee8430deeba9\", \"name\": \"search_facts\", \"arguments\": {\"city\": \"Lisbon\"}}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-abd0ee8430deeba9\", \"response\": \"Lisbon is the capital of Portugal and lies on the Tagus estuary.\"}]}]" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-input/derivation/0x6110cfb31b249a31-output> ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Write a two-sentence brief on Lisbon from this: Here is a short brief on Lisbon:\\n\\n**Weather**\\nCurrently, Lisbon is enjoying a pleasant temperature of 21\\u00b0C with clear skies.\\n\\n**Quick Facts**\\nLisbon is the capital of Portugal and is beautifully situated along the Tagus estuary.\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-bc9f22b160f4898b\", \"name\": \"read_note\", \"arguments\": {\"city\": \"Lisbon\"}}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-bc9f22b160f4898b\", \"response\": \"Lisbon is the capital of Portugal and is located on the Tagus estuary.\"}]}]" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6110cfb31b249a31-output> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-input/derivation/0x6110cfb31b249a31-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6110cfb31b249a31-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x5c9fd6dc1f1d173f-arguments> a prov:Entity ;
+    rdfs:label "facts_agent arguments" ;
+    prov:value "{\"task\":\"interesting facts about Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x5c9fd6dc1f1d173f-result> a prov:Entity ;
+    rdfs:label "facts_agent result" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x5c9fd6dc1f1d173f-result/derivation/0x3f703da56458ebda-output> ;
+    prov:value "\"Lisbon is the capital of Portugal and is located on the Tagus estuary.\"" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x3f703da56458ebda-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x5c9fd6dc1f1d173f> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x5c9fd6dc1f1d173f-result/derivation/0x3f703da56458ebda-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x3f703da56458ebda-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6110cfb31b249a31-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Write a short brief on Lisbon's weather and facts.\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-bb967858281d1526\", \"name\": \"weather_agent\", \"arguments\": {\"task\": \"current weather in Lisbon\"}}, {\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-9757504330412998\", \"name\": \"facts_agent\", \"arguments\": {\"task\": \"interesting facts about Lisbon\"}}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-bb967858281d1526\", \"response\": \"The current weather in Lisbon is 21\\u00b0C with a clear sky.\"}, {\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-9757504330412998\", \"response\": \"Lisbon is the capital of Portugal and is located on the Tagus estuary.\"}]}]" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x63b259a80d631f1f-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"current weather in Lisbon\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-bc65bc2b5dcb0791\", \"name\": \"get_weather\", \"arguments\": {\"city\": \"Lisbon\"}}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-bc65bc2b5dcb0791\", \"response\": \"TimeoutError: weather service timed out\"}]}]" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x63b259a80d631f1f-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-96bd8e6e474b5f68\", \"name\": \"get_weather\", \"arguments\": {\"city\": \"Lisbon\"}}], \"finish_reason\": \"tool_call\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x63b259a80d631f1f> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6f47ca9f24dc2b4b-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6f47ca9f24dc2b4b-input/derivation/0xf4c250a09e604acd-output> ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Send this brief to client:\\nLisbon is the capital of Portugal, beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-b570b15b2dca022f\", \"name\": \"send_brief\", \"arguments\": {\"text\": \"Lisbon is the capital of Portugal, beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\", \"to\": \"client\"}}, {\"type\": \"tool-approval-request\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool-approval-response\"}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-b570b15b2dca022f\", \"response\": \"/root/PapersABC/PROV-AI/v10/data/runs/vercel_ai/va-20261002T155631/brief-to-client.txt\"}]}]" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-output> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6f47ca9f24dc2b4b-input/derivation/0xf4c250a09e604acd-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7334e9e76ae39383-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7334e9e76ae39383-input/derivation/0x561fe91ed8c33e00-output> ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"The draft failed review: the first draft is always sent back for revision. Revise it:\\nLisbon is the capital of Portugal and is beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\"}]}]" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-output> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7334e9e76ae39383-input/derivation/0x561fe91ed8c33e00-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7334e9e76ae39383-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-a6c2d880a8efec2d\", \"name\": \"read_note\", \"arguments\": {\"city\": \"Lisbon\"}}], \"finish_reason\": \"tool_call\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x7334e9e76ae39383> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7394f63a1f8eeac2-arguments> a prov:Entity ;
+    rdfs:label "search_facts arguments" ;
+    prov:value "{\"city\":\"Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7394f63a1f8eeac2-result> a prov:Entity ;
+    rdfs:label "search_facts result" ;
+    prov:value "\"Lisbon is the capital of Portugal and lies on the Tagus estuary.\"" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x7394f63a1f8eeac2> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xa1d43dc9019f8361-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"current weather in Lisbon\"}]}]" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xa1d43dc9019f8361-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-bc65bc2b5dcb0791\", \"name\": \"get_weather\", \"arguments\": {\"city\": \"Lisbon\"}}], \"finish_reason\": \"tool_call\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xa1d43dc9019f8361> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb375b3d0a0e5d0ef-arguments> a prov:Entity ;
+    rdfs:label "get_weather arguments" ;
+    prov:value "{\"city\":\"Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb375b3d0a0e5d0ef-result> a prov:Entity ;
+    rdfs:label "get_weather result" ;
+    prov:value "\"Lisbon: 21 C, clear sky\"" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xb375b3d0a0e5d0ef> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb7f7fe0e4341d56c-arguments> a prov:Entity ;
+    rdfs:label "read_note arguments" ;
+    prov:value "{\"city\":\"Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb7f7fe0e4341d56c-result> a prov:Entity ;
+    rdfs:label "read_note result" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb7f7fe0e4341d56c-result/derivation/notes%2FLisbon%2F1> ;
+    prov:value "\"Lisbon is the capital of Portugal and is located on the Tagus estuary.\"" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xb7f7fe0e4341d56c> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb7f7fe0e4341d56c-result/derivation/notes%2FLisbon%2F1> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc79cfb070f3c901d-result> a prov:Entity ;
+    rdfs:label "send_brief result" ;
+    prov:value "\"/root/PapersABC/PROV-AI/v10/data/runs/vercel_ai/va-20261002T155631/brief-to-client.txt\"" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xc79cfb070f3c901d> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc7b0096d6d4ac972-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc7b0096d6d4ac972-input/derivation/0xf4c250a09e604acd-output> ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Lisbon is the capital of Portugal, beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\"}]}]" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-output> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc7b0096d6d4ac972-input/derivation/0xf4c250a09e604acd-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc9a3d1a0b3f10421-arguments> a prov:Entity ;
+    rdfs:label "read_note arguments" ;
+    prov:value "{\"city\":\"Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc9a3d1a0b3f10421-result> a prov:Entity ;
+    rdfs:label "read_note result" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc9a3d1a0b3f10421-result/derivation/notes%2FLisbon%2F1> ;
+    prov:value "\"Lisbon is the capital of Portugal and is located on the Tagus estuary.\"" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xc9a3d1a0b3f10421> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc9a3d1a0b3f10421-result/derivation/notes%2FLisbon%2F1> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xd718ba9eb8182ce3-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Write a short brief on Lisbon's weather and facts.\"}]}]" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xdb41c40cd8a97447-arguments> a prov:Entity ;
+    rdfs:label "get_weather arguments" ;
+    prov:value "{\"city\":\"Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xeee18d03dc119515-arguments> a prov:Entity ;
+    rdfs:label "weather_agent arguments" ;
+    prov:value "{\"task\":\"current weather in Lisbon\"}" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xeee18d03dc119515-result> a prov:Entity ;
+    rdfs:label "weather_agent result" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xeee18d03dc119515-result/derivation/0x243444d6b204c9e3-output> ;
+    prov:value "\"The current weather in Lisbon is 21°C with a clear sky.\"" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x243444d6b204c9e3-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xeee18d03dc119515> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xeee18d03dc119515-result/derivation/0x243444d6b204c9e3-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x243444d6b204c9e3-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf24c673642f9f162-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf24c673642f9f162-input/derivation/0x6110cfb31b249a31-output> ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"Write a two-sentence brief on Lisbon from this: Here is a short brief on Lisbon:\\n\\n**Weather**\\nCurrently, Lisbon is enjoying a pleasant temperature of 21\\u00b0C with clear skies.\\n\\n**Quick Facts**\\nLisbon is the capital of Portugal and is beautifully situated along the Tagus estuary.\"}]}]" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6110cfb31b249a31-output> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf24c673642f9f162-input/derivation/0x6110cfb31b249a31-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6110cfb31b249a31-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf24c673642f9f162-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-bc9f22b160f4898b\", \"name\": \"read_note\", \"arguments\": {\"city\": \"Lisbon\"}}], \"finish_reason\": \"tool_call\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xf24c673642f9f162> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-input/derivation/0x561fe91ed8c33e00-output> ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"The draft failed review: the first draft is always sent back for revision. Revise it:\\nLisbon is the capital of Portugal and is beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\"}]}, {\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-a6c2d880a8efec2d\", \"name\": \"read_note\", \"arguments\": {\"city\": \"Lisbon\"}}]}, {\"role\": \"tool\", \"parts\": [{\"type\": \"tool_call_response\", \"id\": \"chatcmpl-tool-a6c2d880a8efec2d\", \"response\": \"Lisbon is the capital of Portugal and is located on the Tagus estuary.\"}]}]" ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-output> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-input/derivation/0x561fe91ed8c33e00-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xfd234cba207ce5b9-input> a provai:Message ;
+    rdfs:label "model input" ;
+    prov:value "[{\"role\": \"user\", \"parts\": [{\"type\": \"text\", \"content\": \"interesting facts about Lisbon\"}]}]" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xfd234cba207ce5b9-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-abd0ee8430deeba9\", \"name\": \"search_facts\", \"arguments\": {\"city\": \"Lisbon\"}}], \"finish_reason\": \"tool_call\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xfd234cba207ce5b9> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1/derivation/0x3f703da56458ebda-output> a prov:Derivation ;
+    prov:entity <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x3f703da56458ebda-output> ;
+    provai:knownBy "inferred" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x099d62433a7dcc64> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:49.777475+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:48.581000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x099d62433a7dcc64-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:cost 0.00003138 ;
+    provai:finishReason "tool-calls" ;
+    provai:inputTokens 162 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 56 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x29a272a1018cbad2> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x159a8be4576ac902> a provai:AgentInvocation ;
+    rdfs:label "writer" ;
+    prov:endedAtTime "2026-10-02T15:56:49.855084+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:48.580000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:iteration 3 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x243444d6b204c9e3> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:38.464297+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:37.765000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x243444d6b204c9e3-input>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb375b3d0a0e5d0ef-result> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> ;
+    provai:cost 0.00001493 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 167 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 21 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x289a8c766794e7df> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x289a8c766794e7df> a provai:Step ;
+    rdfs:label "step 3" ;
+    prov:endedAtTime "2026-10-02T15:56:38.465041+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:37.765000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x0968551e624dd2e9> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x29a272a1018cbad2> a provai:Step ;
+    rdfs:label "step 1" ;
+    prov:endedAtTime "2026-10-02T15:56:49.778253+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:48.581000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x159a8be4576ac902> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x3f703da56458ebda> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:37.985602+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:37.059000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x3f703da56458ebda-input>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7394f63a1f8eeac2-result> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/facts_agent> ;
+    provai:cost 0.00001315 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 133 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 21 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x5be2f06fb64423e4> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x561fe91ed8c33e00> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:43.272093+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:41.977000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-input>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb7f7fe0e4341d56c-result> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:cost 0.00002283 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 199 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 42 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x57f3f1468ece4934> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x57f3f1468ece4934> a provai:Step ;
+    rdfs:label "step 2" ;
+    prov:endedAtTime "2026-10-02T15:56:43.272709+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:41.977000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x31e15e80986ca549> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x5be2f06fb64423e4> a provai:Step ;
+    rdfs:label "step 2" ;
+    prov:endedAtTime "2026-10-02T15:56:37.986207+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:37.052000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xe2f5a713393dd373> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x6110cfb31b249a31> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:41.157440+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:38.468000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x5c9fd6dc1f1d173f-result>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6110cfb31b249a31-input>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xeee18d03dc119515-result> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> ;
+    provai:cost 0.00003264 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 294 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 59 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xda549c9862a07a15> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x62f69b2913f17b83> a provai:Step ;
+    rdfs:label "step 1" ;
+    prov:endedAtTime "2026-10-02T15:56:48.564650+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:45.557000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xd79de19f0460f529> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x63b259a80d631f1f> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:37.752134+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:36.970000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x63b259a80d631f1f-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> ;
+    provai:cost 0.00001304 ;
+    provai:finishReason "tool-calls" ;
+    provai:inputTokens 128 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 20 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x56cd56aae117f2de> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x6f47ca9f24dc2b4b> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:50.876309+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:49.878000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6f47ca9f24dc2b4b-input>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc79cfb070f3c901d-result> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:cost 0.00002422 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 248 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 17 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xce9bee0cee72625f> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x7334e9e76ae39383> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:44.172009+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:43.281000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7334e9e76ae39383-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:cost 0.00001369 ;
+    provai:finishReason "tool-calls" ;
+    provai:inputTokens 177 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 16 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xa380e65844f594e9> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x7394f63a1f8eeac2> a provai:ToolCall ;
+    rdfs:label "search_facts" ;
+    prov:endedAtTime "2026-10-02T15:56:36.981751+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:36.977000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7394f63a1f8eeac2-arguments>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xfd234cba207ce5b9-output> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/facts_agent> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x55eb485710cf171c> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/search_facts> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xa1d43dc9019f8361> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:36.383395+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:34.879000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xa1d43dc9019f8361-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> ;
+    provai:cost 0.00001139 ;
+    provai:finishReason "tool-calls" ;
+    provai:inputTokens 123 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 16 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xb50db2ddcb7efa8e> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xa8e119a50c7e5c2e> a provai:Step ;
+    rdfs:label "step 2" ;
+    prov:endedAtTime "2026-10-02T15:56:45.553641+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:44.174000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x13f4dc25b9b803be> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xb375b3d0a0e5d0ef> a provai:ToolCall ;
+    rdfs:label "get_weather" ;
+    prov:endedAtTime "2026-10-02T15:56:37.763427+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:37.763000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x63b259a80d631f1f-output>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb375b3d0a0e5d0ef-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> ;
+    provai:attempt 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x56cd56aae117f2de> ;
+    provai:retryOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xdb41c40cd8a97447> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/get_weather> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xc7b0096d6d4ac972> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:48.564296+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:45.557000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc7b0096d6d4ac972-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/evaluator> ;
+    provai:cost 0.0000106 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 70 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x62f69b2913f17b83> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xce9bee0cee72625f> a provai:Step ;
+    rdfs:label "step 1" ;
+    prov:endedAtTime "2026-10-02T15:56:50.876717+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:49.878000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x669dfcb71daaa62c> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xd718ba9eb8182ce3> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:34.857195+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:32.882000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xd718ba9eb8182ce3-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> ;
+    provai:cost 0.00002242 ;
+    provai:finishReason "tool-calls" ;
+    provai:inputTokens 232 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 35 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x86a599881eacd9a9> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xd79de19f0460f529> a provai:AgentInvocation ;
+    rdfs:label "evaluator" ;
+    prov:endedAtTime "2026-10-02T15:56:48.565138+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:45.556000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/evaluator> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xda549c9862a07a15> a provai:Step ;
+    rdfs:label "step 2" ;
+    prov:endedAtTime "2026-10-02T15:56:41.157012+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:38.467000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x64a94f21be8de52b> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xdb41c40cd8a97447> a provai:ToolCall ;
+    rdfs:label "get_weather" ;
+    prov:endedAtTime "2026-10-02T15:56:36.961941+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:36.954000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xa1d43dc9019f8361-output>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xdb41c40cd8a97447-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> ;
+    provai:errorType "TimeoutError" ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xb50db2ddcb7efa8e> ;
+    provai:status "failed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/get_weather> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xf24c673642f9f162> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:41.975060+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:41.165000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf24c673642f9f162-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:cost 0.00001441 ;
+    provai:finishReason "tool-calls" ;
+    provai:inputTokens 185 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 16 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x68b435ae01fd717f> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xf4c250a09e604acd> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:45.552775+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:44.177000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc9a3d1a0b3f10421-result>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:cost 0.00002245 ;
+    provai:finishReason "stop" ;
+    provai:inputTokens 191 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 41 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xa8e119a50c7e5c2e> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xfd234cba207ce5b9> a provai:ModelCall ;
+    rdfs:label "chat google/gemma-4-26b-a4b-it" ;
+    prov:endedAtTime "2026-10-02T15:56:36.976817+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:34.879000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xfd234cba207ce5b9-input> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/facts_agent> ;
+    provai:cost 0.00001112 ;
+    provai:finishReason "tool-calls" ;
+    provai:inputTokens 120 ;
+    provai:maxTokens 1000 ;
+    provai:outputTokens 16 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x55eb485710cf171c> ;
+    provai:status "completed" ;
+    provai:temperature 0.2 ;
+    provai:usedModel <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/approval-2026-10-02T15%3A56%3A49.856Z> a provai:Check ;
+    rdfs:label "approval" ;
+    prov:endedAtTime "2026-10-02T15:56:49.856000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:49.856000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/approver> ;
+    provai:checked <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc79cfb070f3c901d-arguments> ;
+    provai:outcome "approve" ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/write-2026-10-02T15%3A56%3A38.059Z> a provai:MemoryAccess ;
+    rdfs:label "memory write" ;
+    prov:endedAtTime "2026-10-02T15:56:38.059000+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:38.059000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/facts_agent> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x5c9fd6dc1f1d173f> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/facts_agent> a provai:Tool ;
+    rdfs:label "facts_agent" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/search_facts> a provai:Tool ;
+    rdfs:label "search_facts" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/send_brief> a provai:Tool ;
+    rdfs:label "send_brief" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/weather_agent> a provai:Tool ;
+    rdfs:label "weather_agent" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/user> a prov:Person ;
+    rdfs:label "user" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x243444d6b204c9e3-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"The current weather in Lisbon is 21\\u00b0C with a clear sky.\"}], \"finish_reason\": \"stop\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x243444d6b204c9e3> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc79cfb070f3c901d-arguments> a prov:Entity ;
+    rdfs:label "send_brief arguments" ;
+    prov:value "{\"text\":\"Lisbon is the capital of Portugal, beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21°C.\",\"to\":\"client\"}" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xd718ba9eb8182ce3-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-bb967858281d1526\", \"name\": \"weather_agent\", \"arguments\": {\"task\": \"current weather in Lisbon\"}}, {\"type\": \"tool_call\", \"id\": \"chatcmpl-tool-9757504330412998\", \"name\": \"facts_agent\", \"arguments\": {\"task\": \"interesting facts about Lisbon\"}}], \"finish_reason\": \"tool_call\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xd718ba9eb8182ce3> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x13f4dc25b9b803be> a provai:AgentInvocation ;
+    rdfs:label "writer" ;
+    prov:endedAtTime "2026-10-02T15:56:45.553522+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:43.280000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:iteration 2 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x31e15e80986ca549> a provai:AgentInvocation ;
+    rdfs:label "writer" ;
+    prov:endedAtTime "2026-10-02T15:56:43.272806+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:41.164000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x55eb485710cf171c> a provai:Step ;
+    rdfs:label "step 1" ;
+    prov:endedAtTime "2026-10-02T15:56:37.050957+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:34.878000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xe2f5a713393dd373> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x56cd56aae117f2de> a provai:Step ;
+    rdfs:label "step 2" ;
+    prov:endedAtTime "2026-10-02T15:56:37.764167+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:36.970000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x0968551e624dd2e9> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x64a94f21be8de52b> a provai:AgentInvocation,
+        provai:Routing ;
+    rdfs:label "coordinator" ;
+    prov:endedAtTime "2026-10-02T15:56:41.158096+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:32.875000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> ;
+    provai:candidate <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/facts_agent>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/translator_agent>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:selected <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/facts_agent>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x669dfcb71daaa62c> a provai:AgentInvocation ;
+    rdfs:label "writer" ;
+    prov:endedAtTime "2026-10-02T15:56:50.877307+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:49.872000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:iteration 4 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x68b435ae01fd717f> a provai:Step ;
+    rdfs:label "step 1" ;
+    prov:endedAtTime "2026-10-02T15:56:41.976636+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:41.165000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x31e15e80986ca549> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xa380e65844f594e9> a provai:Step ;
+    rdfs:label "step 1" ;
+    prov:endedAtTime "2026-10-02T15:56:44.173320+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:43.281000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x13f4dc25b9b803be> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xb50db2ddcb7efa8e> a provai:Step ;
+    rdfs:label "step 1" ;
+    prov:endedAtTime "2026-10-02T15:56:36.967735+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:34.878000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x0968551e624dd2e9> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xb7f7fe0e4341d56c> a provai:ToolCall ;
+    rdfs:label "read_note" ;
+    prov:endedAtTime "2026-10-02T15:56:41.976387+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:41.976000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xb7f7fe0e4341d56c-arguments>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf24c673642f9f162-output> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x68b435ae01fd717f> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/read_note> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xc79cfb070f3c901d> a provai:ToolCall ;
+    rdfs:label "send_brief" ;
+    prov:endedAtTime "2026-10-02T15:56:49.876574+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:49.874000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x099d62433a7dcc64-output>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc79cfb070f3c901d-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    prov:wasInformedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/approval-2026-10-02T15%3A56%3A49.856Z> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x669dfcb71daaa62c> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/send_brief> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xc9a3d1a0b3f10421> a provai:ToolCall ;
+    rdfs:label "read_note" ;
+    prov:endedAtTime "2026-10-02T15:56:44.172406+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:44.172000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x7334e9e76ae39383-output>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xc9a3d1a0b3f10421-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xa380e65844f594e9> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/read_note> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xe2f5a713393dd373> a provai:AgentInvocation ;
+    rdfs:label "facts_agent" ;
+    prov:endedAtTime "2026-10-02T15:56:38.056227+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:34.873000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/facts_agent> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x5c9fd6dc1f1d173f> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xeee18d03dc119515> a provai:ToolCall ;
+    rdfs:label "weather_agent" ;
+    prov:endedAtTime "2026-10-02T15:56:38.465554+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:34.862000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xd718ba9eb8182ce3-output>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xeee18d03dc119515-arguments> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x86a599881eacd9a9> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/weather_agent> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/get_weather> a provai:Tool ;
+    rdfs:label "get_weather" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/read_note> a provai:Tool ;
+    rdfs:label "read_note" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x0968551e624dd2e9> a provai:AgentInvocation ;
+    rdfs:label "weather_agent" ;
+    prov:endedAtTime "2026-10-02T15:56:38.464967+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:34.872000+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> ;
+    provai:iteration 1 ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xeee18d03dc119515> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x5c9fd6dc1f1d173f> a provai:ToolCall ;
+    rdfs:label "facts_agent" ;
+    prov:endedAtTime "2026-10-02T15:56:38.058825+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:34.862000+00:00"^^xsd:dateTime ;
+    prov:used <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x5c9fd6dc1f1d173f-arguments>,
+        <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xd718ba9eb8182ce3-output> ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x86a599881eacd9a9> ;
+    provai:status "completed" ;
+    provai:usedTool <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/tool/facts_agent> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x86a599881eacd9a9> a provai:Step ;
+    rdfs:label "step 1" ;
+    prov:endedAtTime "2026-10-02T15:56:38.465972+00:00"^^xsd:dateTime ;
+    prov:startedAtTime "2026-10-02T15:56:32.881000+00:00"^^xsd:dateTime ;
+    provai:partOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x64a94f21be8de52b> ;
+    provai:status "completed" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/evaluator> a provai:Agent ;
+    rdfs:label "evaluator" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x3f703da56458ebda-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"Lisbon is the capital of Portugal and is located on the Tagus estuary.\"}], \"finish_reason\": \"stop\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x3f703da56458ebda> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x6110cfb31b249a31-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"Here is a short brief on Lisbon:\\n\\n**Weather**\\nCurrently, Lisbon is enjoying a pleasant temperature of 21\\u00b0C with clear skies.\\n\\n**Quick Facts**\\nLisbon is the capital of Portugal and is beautifully situated along the Tagus estuary.\"}], \"finish_reason\": \"stop\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x6110cfb31b249a31> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x561fe91ed8c33e00-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"Lisbon is the capital of Portugal and is beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\"}], \"finish_reason\": \"stop\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0x561fe91ed8c33e00> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/facts_agent> a provai:Agent ;
+    rdfs:label "facts_agent" ;
+    prov:actedOnBehalfOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0xf4c250a09e604acd-output> a provai:Message ;
+    rdfs:label "model output" ;
+    prov:value "[{\"role\": \"assistant\", \"parts\": [{\"type\": \"text\", \"content\": \"Lisbon is the capital of Portugal, beautifully situated along the Tagus estuary. The city is currently enjoying pleasant weather with clear skies and a temperature of 21\\u00b0C.\"}], \"finish_reason\": \"stop\"}]" ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/0xf4c250a09e604acd> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1> a provai:MemoryRecord ;
+    rdfs:label "Lisbon" ;
+    prov:qualifiedDerivation <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/notes%2FLisbon%2F1/derivation/0x3f703da56458ebda-output> ;
+    prov:value "Lisbon is the capital of Portugal and is located on the Tagus estuary." ;
+    prov:wasDerivedFrom <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/entity/0x3f703da56458ebda-output> ;
+    prov:wasGeneratedBy <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/step/write-2026-10-02T15%3A56%3A38.059Z> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/weather_agent> a provai:Agent ;
+    rdfs:label "weather_agent" ;
+    prov:actedOnBehalfOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> a provai:Agent ;
+    rdfs:label "coordinator" ;
+    prov:actedOnBehalfOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/user> .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/run> a provai:Run ;
+    prov:wasAssociatedWith <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/user> ;
+    provai:contentCaptured true ;
+    provai:source "vercel-ai 7.0.127 with @ai-sdk/otel 1.0.127" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/model/openrouter%2Fgoogle%2Fgemma-4-26b-a4b-it> a provai:Model ;
+    rdfs:label "google/gemma-4-26b-a4b-it" ;
+    provai:provider "openrouter" .
+
+<https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/writer> a provai:Agent ;
+    rdfs:label "writer" ;
+    prov:actedOnBehalfOf <https://w3id.org/prov-ai/run/vercel-ai/va-20261002T155631/agent/coordinator> .
+

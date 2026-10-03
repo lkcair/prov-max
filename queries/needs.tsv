@@ -1,0 +1,43 @@
+need	name	terms	note
+N1	who sent which task to whom	selected|toAgent prov:startedAtTime Message	
+N2	the router's decision and plan	Routing candidate selected	
+N3	the real cause of a route		whether a stated reason was the real cause needs a counterfactual analysis
+N4	responsibility up to the person	accountableAgent prov:actedOnBehalfOf prov:Person	
+N5	what one agent passed to another	Handoff fromAgent toAgent Message	
+N6	agents created during a run	spawnedBy	
+N7	what each step called	ToolCall usedTool	
+N8	where the arguments of a call came from	ToolCall dependsOn	
+N9	what each step relied on	dependsOn derivedFrom	
+N10	changes to the outside world	Effect target	
+N11	what a bad source affected	dependsOn usedModel	
+N12	whether the data read was out of date	validAt|version	
+N13	retries and fallbacks	retryOf attempt	
+N14	why a loop stopped	iteration outcome	
+N15	which critique judged which draft	Check checked iteration	
+N16	parallel branches and their merge	partOf prov:startedAtTime prov:endedAtTime	
+N17	votes among candidates	Vote votedFor checked	
+N18	harm spread across agents		spreading harm across interchangeable agents is a question of causal analysis
+N19	the order of asynchronous agents	prov:startedAtTime	
+N20	concurrent writes to shared state	MemoryRecord prov:wasRevisionOf	
+N21	data crossing users or tenants	scope	
+N22	patterns across runs		patterns across many runs are an analysis over the merged records
+N23	where a memory came from	MemoryRecord MemoryAccess prov:wasGeneratedBy	
+N24	which memories a step read	MemoryAccess prov:used	
+N25	stale or superseded memory	MemoryRecord prov:wasRevisionOf|validAt|prov:wasInvalidatedBy	
+N26	each agent's working context	Message ModelCall	
+N27	untrusted content becoming memory	trustLevel MemoryRecord	
+N28	which step failed and how	status errorType	
+N29	failure attribution	FailureAttribution blamedStep|blamedAgent	
+N30	replay of a run	ModelCall usedModel temperature Message	
+N31	completeness of the record	source	
+N32	which check ran and what it decided	Check checked outcome	
+N33	approvals by people	Check outcome prov:Person	
+N34	live monitoring		live monitoring is an operational concern of the store
+N35	tokens per call and agent	inputTokens outputTokens	
+N36	cost per call and agent	inputTokens outputTokens cost	
+N37	time per agent	prov:startedAtTime prov:endedAtTime	
+N38	effort out of proportion to the task	AgentInvocation ModelCall	
+N39	personal content in the record	contentCaptured	
+N40	retention of the record		retention and deletion are policies of the store
+N41	access to the record	scope	
+N42	trust in the record		trust in the record needs tamper evidence, outside the vocabulary

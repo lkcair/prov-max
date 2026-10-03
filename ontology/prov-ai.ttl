@@ -1,0 +1,353 @@
+@prefix provai:  <https://w3id.org/prov-ai#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix vann:    <http://purl.org/vocab/vann/> .
+
+dcterms:title a owl:AnnotationProperty .
+dcterms:description a owl:AnnotationProperty .
+dcterms:creator a owl:AnnotationProperty .
+dcterms:publisher a owl:AnnotationProperty .
+dcterms:created a owl:AnnotationProperty .
+dcterms:license a owl:AnnotationProperty .
+vann:preferredNamespacePrefix a owl:AnnotationProperty .
+vann:preferredNamespaceUri a owl:AnnotationProperty .
+
+<https://w3id.org/prov-ai> a owl:Ontology ;
+    rdfs:label "PROV-AI"@en ;
+    dcterms:title "PROV-AI: PROV for Multi-Agent AI Execution"@en ;
+    dcterms:description "A vocabulary over W3C PROV-O for the execution provenance of multi-agent systems, into which the records of different agent frameworks and trace formats are integrated."@en ;
+    dcterms:creator "Lucas Kojo Chehuen" ;
+    dcterms:publisher "Federal University of Juiz de Fora" ;
+    dcterms:created "2026-10-02" ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "provai" ;
+    vann:preferredNamespaceUri "https://w3id.org/prov-ai#" ;
+    owl:versionInfo "1.0" ;
+    owl:imports <http://www.w3.org/ns/prov-o#> .
+
+
+# Executions and their structure
+
+provai:Session a owl:Class ; rdfs:subClassOf prov:Activity ;
+    rdfs:label "session"@en ;
+    rdfs:comment "A conversation or thread that spans several runs."@en .
+
+provai:Run a owl:Class ; rdfs:subClassOf prov:Activity ;
+    rdfs:label "run"@en ;
+    rdfs:comment "One execution of a multi-agent system for one request."@en .
+
+provai:Step a owl:Class ; rdfs:subClassOf prov:Activity ;
+    rdfs:label "step"@en ;
+    rdfs:comment "A unit of work inside a run."@en .
+
+provai:partOf a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:label "part of"@en ;
+    rdfs:domain prov:Activity ; rdfs:range prov:Activity ;
+    rdfs:comment "The run, session, loop, or parent step an activity ran inside."@en .
+
+provai:retryOf a owl:ObjectProperty ; rdfs:subPropertyOf prov:wasInformedBy ;
+    rdfs:label "retry of"@en ;
+    rdfs:domain provai:Step ; rdfs:range provai:Step ;
+    rdfs:comment "The failed step this step retries."@en .
+
+provai:iteration a owl:DatatypeProperty ; rdfs:label "iteration"@en ;
+    rdfs:domain provai:Step ; rdfs:range xsd:integer ;
+    rdfs:comment "The index of a step within its loop."@en .
+
+provai:attempt a owl:DatatypeProperty ; rdfs:label "attempt"@en ;
+    rdfs:domain provai:Step ; rdfs:range xsd:integer ;
+    rdfs:comment "The attempt number of a retried step."@en .
+
+provai:branch a owl:DatatypeProperty ; rdfs:label "branch"@en ;
+    rdfs:domain provai:Step ; rdfs:range xsd:string ;
+    rdfs:comment "The label of the parallel branch a step ran in."@en .
+
+provai:sequence a owl:DatatypeProperty ; rdfs:label "sequence"@en ;
+    rdfs:range xsd:integer ;
+    rdfs:comment "The position of a step or message in the order its channel delivered them."@en .
+
+provai:status a owl:DatatypeProperty ; rdfs:label "status"@en ;
+    rdfs:domain prov:Activity ; rdfs:range xsd:string ;
+    rdfs:comment "How an activity ended: completed, failed, blocked, cancelled, or interrupted."@en .
+
+provai:errorType a owl:DatatypeProperty ; rdfs:label "error type"@en ;
+    rdfs:domain prov:Activity ; rdfs:range xsd:string ;
+    rdfs:comment "The error an activity ended with."@en .
+
+
+# Agents and responsibility
+
+provai:Agent a owl:Class ; rdfs:subClassOf prov:SoftwareAgent ;
+    rdfs:label "agent"@en ;
+    rdfs:comment "An agent of a multi-agent system, named within its run or session."@en .
+
+provai:AgentInvocation a owl:Class ; rdfs:subClassOf provai:Step ;
+    rdfs:label "agent invocation"@en ;
+    rdfs:comment "A turn an agent took."@en .
+
+provai:spawnedBy a owl:ObjectProperty ;
+    rdfs:label "spawned by"@en ;
+    rdfs:domain prov:Agent ; rdfs:range prov:Activity ;
+    rdfs:comment "The step that created an agent during the run."@en .
+
+provai:accountableAgent a owl:ObjectProperty ;
+    rdfs:label "accountable agent"@en ;
+    rdfs:domain prov:Entity ; rdfs:range prov:Agent ;
+    owl:propertyChainAxiom ( prov:wasGeneratedBy prov:wasAssociatedWith ) ;
+    rdfs:comment "An agent whose step produced the entity or something it may depend on, or an agent such an agent acted on behalf of."@en .
+
+provai:accountableAgent owl:propertyChainAxiom ( provai:dependsOn provai:accountableAgent ) .
+provai:accountableAgent owl:propertyChainAxiom ( provai:accountableAgent prov:actedOnBehalfOf ) .
+
+
+# Routing, handoffs, and messages
+
+provai:Routing a owl:Class ; rdfs:subClassOf provai:Step ;
+    rdfs:label "routing"@en ;
+    rdfs:comment "A step that chose which agent or branch runs next."@en .
+
+provai:candidate a owl:ObjectProperty ;
+    rdfs:label "candidate"@en ;
+    rdfs:domain provai:Routing ; rdfs:range prov:Agent ;
+    rdfs:comment "An agent a routing could have chosen."@en .
+
+provai:selected a owl:ObjectProperty ; rdfs:subPropertyOf provai:candidate ;
+    rdfs:label "selected"@en ;
+    rdfs:domain provai:Routing ; rdfs:range prov:Agent ;
+    rdfs:comment "An agent a routing chose."@en .
+
+provai:reason a owl:DatatypeProperty ; rdfs:label "reason"@en ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The stated reason for a routing, a check outcome, or a refusal."@en .
+
+provai:Handoff a owl:Class ; rdfs:subClassOf provai:Step ;
+    rdfs:label "handoff"@en ;
+    rdfs:comment "A step that passed work from one agent to another."@en .
+
+provai:fromAgent a owl:ObjectProperty ; rdfs:subPropertyOf prov:wasAssociatedWith ;
+    rdfs:label "from agent"@en ;
+    rdfs:domain provai:Handoff ; rdfs:range prov:Agent ;
+    rdfs:comment "The agent that handed the work off."@en .
+
+provai:toAgent a owl:ObjectProperty ; rdfs:subPropertyOf prov:wasAssociatedWith ;
+    rdfs:label "to agent"@en ;
+    rdfs:domain provai:Handoff ; rdfs:range prov:Agent ;
+    rdfs:comment "The agent that received the work."@en .
+
+provai:Message a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "message"@en ;
+    rdfs:comment "Content passed between agents or to a model."@en .
+
+
+# Model calls, tool calls, and data
+
+provai:ModelCall a owl:Class ; rdfs:subClassOf provai:Step ;
+    rdfs:label "model call"@en ;
+    rdfs:comment "One call to an AI model, such as a language model."@en .
+
+provai:Model a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "model"@en ;
+    rdfs:comment "A model a call used, identified by its provider and name."@en .
+
+provai:usedModel a owl:ObjectProperty ; rdfs:subPropertyOf prov:used ;
+    rdfs:label "used model"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range provai:Model ;
+    rdfs:comment "The model a call used."@en .
+
+provai:provider a owl:DatatypeProperty ; rdfs:label "provider"@en ;
+    rdfs:domain provai:Model ; rdfs:range xsd:string ;
+    rdfs:comment "The provider that served a model."@en .
+
+provai:temperature a owl:DatatypeProperty ; rdfs:label "temperature"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range xsd:decimal ;
+    rdfs:comment "The sampling temperature of a model call."@en .
+
+provai:topP a owl:DatatypeProperty ; rdfs:label "top p"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range xsd:decimal ;
+    rdfs:comment "The nucleus sampling parameter of a model call."@en .
+
+provai:maxTokens a owl:DatatypeProperty ; rdfs:label "max tokens"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range xsd:integer ;
+    rdfs:comment "The output length limit of a model call."@en .
+
+provai:seed a owl:DatatypeProperty ; rdfs:label "seed"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range xsd:integer ;
+    rdfs:comment "The seed a model call was sampled with."@en .
+
+provai:finishReason a owl:DatatypeProperty ; rdfs:label "finish reason"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range xsd:string ;
+    rdfs:comment "Why the model stopped generating."@en .
+
+provai:inputTokens a owl:DatatypeProperty ; rdfs:label "input tokens"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range xsd:integer ;
+    rdfs:comment "The tokens a model call read."@en .
+
+provai:outputTokens a owl:DatatypeProperty ; rdfs:label "output tokens"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range xsd:integer ;
+    rdfs:comment "The tokens a model call generated."@en .
+
+provai:cost a owl:DatatypeProperty ; rdfs:label "cost"@en ;
+    rdfs:domain provai:ModelCall ; rdfs:range xsd:decimal ;
+    rdfs:comment "The price of a model call in US dollars."@en .
+
+provai:PromptTemplate a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "prompt template"@en ;
+    rdfs:comment "The reusable wording a prompt was rendered from."@en .
+
+provai:version a owl:DatatypeProperty ; rdfs:label "version"@en ;
+    rdfs:range xsd:string ;
+    rdfs:comment "The version of a template, model, document, or tool."@en .
+
+provai:ToolCall a owl:Class ; rdfs:subClassOf provai:Step ;
+    rdfs:label "tool call"@en ;
+    rdfs:comment "A call to a tool, a function, an API, or an MCP server."@en .
+
+provai:Tool a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "tool"@en ;
+    rdfs:comment "A tool a call used."@en .
+
+provai:usedTool a owl:ObjectProperty ; rdfs:subPropertyOf prov:used ;
+    rdfs:label "used tool"@en ;
+    rdfs:domain provai:ToolCall ; rdfs:range provai:Tool ;
+    rdfs:comment "The tool a call used."@en .
+
+provai:readOnly a owl:DatatypeProperty ; rdfs:label "read only"@en ;
+    rdfs:domain provai:Tool ; rdfs:range xsd:boolean ;
+    rdfs:comment "The tool declares that it changes nothing outside the run."@en .
+
+provai:destructive a owl:DatatypeProperty ; rdfs:label "destructive"@en ;
+    rdfs:domain provai:Tool ; rdfs:range xsd:boolean ;
+    rdfs:comment "The tool declares that it may delete or overwrite data."@en .
+
+provai:Retrieval a owl:Class ; rdfs:subClassOf provai:Step ;
+    rdfs:label "retrieval"@en ;
+    rdfs:comment "A lookup in a document store or an index."@en .
+
+provai:Document a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "document"@en ;
+    rdfs:comment "An item a retrieval returned."@en .
+
+
+# Memory and shared state
+
+provai:Memory a owl:Class ; rdfs:subClassOf prov:Collection ;
+    rdfs:label "memory"@en ;
+    rdfs:comment "A store that outlives a run: long-term memory, a session store, or a board shared by agents."@en .
+
+provai:MemoryRecord a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "memory record"@en ;
+    rdfs:comment "One record in a memory."@en .
+
+provai:MemoryAccess a owl:Class ; rdfs:subClassOf provai:Step ;
+    rdfs:label "memory access"@en ;
+    rdfs:comment "A step that read, wrote, or deleted records of a memory."@en .
+
+provai:validAt a owl:DatatypeProperty ; rdfs:label "valid at"@en ;
+    rdfs:domain provai:MemoryRecord ; rdfs:range xsd:dateTime ;
+    rdfs:comment "The time the content of a record is about."@en .
+
+provai:scope a owl:DatatypeProperty ; rdfs:label "scope"@en ;
+    rdfs:range xsd:string ;
+    rdfs:comment "Who may read a record: a user, a tenant, or an agent."@en .
+
+
+# Checks, approvals, and effects
+
+provai:Check a owl:Class ; rdfs:subClassOf provai:Step ;
+    rdfs:label "check"@en ;
+    rdfs:comment "A guardrail, an evaluator, a reviewer, or a human approval."@en .
+
+provai:checked a owl:ObjectProperty ; rdfs:subPropertyOf prov:used ;
+    rdfs:label "checked"@en ;
+    rdfs:domain provai:Check ; rdfs:range prov:Entity ;
+    rdfs:comment "The entity a check evaluated."@en .
+
+provai:outcome a owl:DatatypeProperty ; rdfs:label "outcome"@en ;
+    rdfs:domain provai:Check ; rdfs:range xsd:string ;
+    rdfs:comment "The decision of a check: pass, fail, block, approve, edit, reject, or cancel."@en .
+
+provai:Vote a owl:Class ; rdfs:subClassOf provai:Check ;
+    rdfs:label "vote"@en ;
+    rdfs:comment "A check in which an agent chooses one of several candidate outputs."@en .
+
+provai:votedFor a owl:ObjectProperty ; rdfs:subPropertyOf provai:checked ;
+    rdfs:label "voted for"@en ;
+    rdfs:domain provai:Vote ; rdfs:range prov:Entity ;
+    rdfs:comment "The candidate output a vote chose."@en .
+
+provai:trustLevel a owl:DatatypeProperty ; rdfs:label "trust level"@en ;
+    rdfs:domain prov:Entity ; rdfs:range xsd:string ;
+    rdfs:comment "How far content can be trusted, as a source or a check states it, such as trusted or untrusted."@en .
+
+provai:Effect a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "effect"@en ;
+    rdfs:comment "A change a run made outside itself: a write, a message sent, or data disclosed."@en .
+
+provai:target a owl:DatatypeProperty ; rdfs:label "target"@en ;
+    rdfs:domain provai:Effect ; rdfs:range xsd:string ;
+    rdfs:comment "The resource an effect changed."@en .
+
+provai:irreversible a owl:DatatypeProperty ; rdfs:label "irreversible"@en ;
+    rdfs:domain provai:Effect ; rdfs:range xsd:boolean ;
+    rdfs:comment "The effect cannot be undone."@en .
+
+
+# Failure attribution
+
+provai:FailureAttribution a owl:Class ; rdfs:subClassOf prov:Entity ;
+    rdfs:label "failure attribution"@en ;
+    rdfs:comment "A statement that a step or an agent caused a failure, generated by the method or the person that reached it."@en .
+
+provai:blamedStep a owl:ObjectProperty ;
+    rdfs:label "blamed step"@en ;
+    rdfs:domain provai:FailureAttribution ; rdfs:range prov:Activity ;
+    rdfs:comment "The step an attribution names as the cause."@en .
+
+provai:blamedAgent a owl:ObjectProperty ;
+    rdfs:label "blamed agent"@en ;
+    rdfs:domain provai:FailureAttribution ; rdfs:range prov:Agent ;
+    rdfs:comment "The agent an attribution names as responsible."@en .
+
+
+# Dependence and the provenance of the record
+
+provai:derivedFrom a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:label "derived from"@en ;
+    rdfs:domain prov:Entity ; rdfs:range prov:Entity ;
+    rdfs:comment "The closure of recorded derivation."@en .
+
+prov:wasDerivedFrom rdfs:subPropertyOf provai:derivedFrom .
+
+provai:informedBy a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:label "informed by"@en ;
+    rdfs:domain prov:Activity ; rdfs:range prov:Activity ;
+    rdfs:comment "The closure of communication between activities."@en .
+
+prov:wasInformedBy rdfs:subPropertyOf provai:informedBy .
+
+provai:dependsOn a owl:ObjectProperty , owl:TransitiveProperty ;
+    rdfs:label "depends on"@en ;
+    rdfs:domain prov:Entity ; rdfs:range prov:Entity ;
+    rdfs:comment "An entity this entity may depend on: what it was derived from, what its step used, and what reached that step through messages, triggers, and enclosing activities."@en .
+
+provai:derivedFrom rdfs:subPropertyOf provai:dependsOn .
+provai:dependsOn owl:propertyChainAxiom ( prov:wasGeneratedBy prov:used ) .
+provai:dependsOn owl:propertyChainAxiom ( prov:wasGeneratedBy provai:informedBy prov:used ) .
+provai:dependsOn owl:propertyChainAxiom ( prov:wasGeneratedBy prov:wasStartedBy ) .
+provai:dependsOn owl:propertyChainAxiom ( prov:wasGeneratedBy provai:partOf prov:used ) .
+
+provai:knownBy a owl:DatatypeProperty ; rdfs:label "known by"@en ;
+    rdfs:range xsd:string ;
+    rdfs:comment "How an edge is known when the source does not record it: declared or inferred."@en .
+
+provai:source a owl:DatatypeProperty ; rdfs:label "source"@en ;
+    rdfs:domain provai:Run ; rdfs:range xsd:string ;
+    rdfs:comment "The framework or format that produced the record of a run, with its schema version."@en .
+
+provai:contentCaptured a owl:DatatypeProperty ; rdfs:label "content captured"@en ;
+    rdfs:domain provai:Run ; rdfs:range xsd:boolean ;
+    rdfs:comment "Whether the content of messages was captured for a run."@en .
